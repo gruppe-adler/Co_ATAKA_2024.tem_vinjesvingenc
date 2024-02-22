@@ -119,11 +119,12 @@ class Loadouts {
     resetLoadout = 0;
 
     #include "USER\customGear.hpp"
-
+    
     class Faction {
         #include "node_modules\grad-factions\loadouts.hpp"
         #include "USER\userLoadouts.hpp"
     };
+    
 };
 
 //GRAD CIVS ====================================================================

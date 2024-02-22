@@ -1,7 +1,7 @@
 if (!isServer) exitWith {};
 
 [{
-	if (fueltank distance uav_pshtela < 300) then {
+	if (fueltank distance2d uav_pshtela < 300) then {
 		private _fuel = fuel uav_pshtela;
 		_fuel = _fuel + 0.01;
 		uav_pshtela setFuel _fuel;

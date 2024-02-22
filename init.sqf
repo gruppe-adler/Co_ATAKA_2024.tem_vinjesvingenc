@@ -9,12 +9,12 @@ enableSaving [false, false];
 // SCRIPTS =====================================================================
 [] execVM "USER\userInit.sqf";
 
-setViewDistance 1500;
+// setViewDistance 1500;
 
 cutText ["","BLACK FADED",999];
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
-["BLU_F", "UsMPT"] call GRAD_Loadout_fnc_FactionSetLoadout;
-["OPF_F", "RuFlora"] call GRAD_Loadout_fnc_FactionSetLoadout;
+// ["BLU_F", "UsMPT"] call GRAD_Loadout_fnc_FactionSetLoadout;
+// ["OPF_F", "RuFlora"] call GRAD_Loadout_fnc_FactionSetLoadout;
 
 RHSDecalsOff = true;
 
@@ -38,7 +38,7 @@ showChat false;
 waitUntil {!isNull player};
 waitUntil {time > 0};
 cutText ["", "BLACK IN", 1];
-player switchmove "amovpercmstpslowwrfldnon";
+
 
 private _pos = player getVariable ["GRAD_setup_pos", position player];
 private _dir = player getVariable ["GRAD_setup_dir", 0];
@@ -47,6 +47,12 @@ private _anim = player getVariable ["GRAD_setup_anim", "ACE_AmovPercMstpScapWnon
 player setPos _pos; 
 player setDir _dir;
 
+/* 
+
+player switchmove "amovpercmstpslowwrfldnon";
+
 [player, _anim] remoteExec ["switchMove", 0, true];
 
-// [] spawn GRAD_missionControl_fnc_intro;
+[] spawn GRAD_missionControl_fnc_intro;
+
+*/

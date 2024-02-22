@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2053;
+		nextID=2058;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1179.9077,137.74586,5327.1538};
-		dir[]={-0.16285664,-0.80838877,-0.56567264};
-		up[]={-0.22365019,0.58864886,-0.77683532};
-		aside[]={-0.96096748,0,0.27666166};
+		pos[]={1236.5782,153.74001,5325.0996};
+		dir[]={-0.70899647,-0.70518714,-0.0070303036};
+		up[]={-0.7051596,0.70901144,-0.0069924132};
+		aside[]={-0.0099155391,5.385462e-008,0.99995869};
 	};
 };
 binarizationWanted=0;
@@ -62,12 +62,12 @@ addons[]=
 	"ace_overheating",
 	"rhs_c_tanks",
 	"rhsgref_c_a2port_armor",
-	"A3_Characters_F_Common",
-	"rhs_c_a2port_air",
 	"CUP_CAMisc",
 	"rhs_c_bmp",
 	"gm_core",
-	"A3_Ui_F_Enoch"
+	"A3_Ui_F_Enoch",
+	"A3_Characters_F_Common",
+	"rhs_c_a2port_air"
 };
 class AddonsMetaData
 {
@@ -285,36 +285,36 @@ class AddonsMetaData
 		};
 		class Item31
 		{
-			className="rhs_c_a2port_air";
-			name="A2 ported air";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item32
-		{
 			className="CUP_CAMisc";
 			name="CUP_CAMisc";
 		};
-		class Item33
+		class Item32
 		{
 			className="rhs_c_bmp";
 			name="BMP-1 & 2 IFV";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item34
+		class Item33
 		{
 			className="gm_core";
 			name="gm_core";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item35
+		class Item34
 		{
 			className="A3_Ui_F_Enoch";
 			name="Arma 3 Enoch - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item35
+		{
+			className="rhs_c_a2port_air";
+			name="A2 ported air";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -10375,193 +10375,6 @@ class Mission
 		};
 		class Item83
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1248.5314,205.41669,5304.6924};
-					};
-					side="East";
-					flags=2;
-					class Attributes
-					{
-						name="uav_pshtelaD";
-					};
-					id=1597;
-					type="O_UAV_AI";
-					atlOffset=76.675247;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1248.5314,205.41669,5304.6924};
-					};
-					side="East";
-					class Attributes
-					{
-						name="uav_pshtelaG";
-					};
-					id=1598;
-					type="O_UAV_AI";
-					atlOffset=76.675247;
-				};
-				class Item2
-				{
-					dataType="Waypoint";
-					loiterRadius=500;
-					position[]={1250.3602,128.6152,5293.4507};
-					speed="LIMITED";
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=1599;
-					type="Loiter";
-				};
-				class Item3
-				{
-					dataType="Waypoint";
-					loiterAltitude=900;
-					position[]={994.76599,138.5589,5310.9819};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=2052;
-					type="Loiter";
-				};
-			};
-			class Attributes
-			{
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=1597;
-						item1=1600;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=1598;
-						item1=1600;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=1596;
-			atlOffset=379.92346;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="acex_headless_blacklist";
-					expression="_this setVariable [""acex_headless_blacklist"", _value, true]";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item84
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1245.51,508.94989,5307.7139};
-			};
-			side="East";
-			flags=2;
-			class Attributes
-			{
-				fuel=0.07012815;
-				init="call{this setcaptive true; [this, ""Eule UAV"", [""50.0"", ""50.0""]] call GRAD_missionControl_fnc_setGroupFrequencies; this disableTIEquipment true;}";
-				name="uav_pshtela";
-				reportRemoteTargets=1;
-				reportOwnPosition=1;
-			};
-			id=1600;
-			type="rhs_pchela1t_vvsc";
-			atlOffset=379.92346;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalNumber_type";
-					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRPchelaNumberPlaces, _value]]] call rhs_fnc_decalsInit";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="AviaRed";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="rhs_decalNumber";
-					expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRPchelaNumberPlaces}else{[_this, [['Number', cRHSAIRPchelaNumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=137;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item85
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -10576,7 +10389,7 @@ class Mission
 			type="Land_ClutterCutter_small_F";
 			atlOffset=3.7047577;
 		};
-		class Item86
+		class Item84
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10593,7 +10406,7 @@ class Mission
 			id=1916;
 			type="Land_fuel_tank_small";
 		};
-		class Item87
+		class Item85
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10705,7 +10518,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item88
+		class Item86
 		{
 			dataType="Group";
 			side="East";
@@ -10944,7 +10757,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item89
+		class Item87
 		{
 			dataType="Group";
 			side="East";
@@ -11050,7 +10863,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item90
+		class Item88
 		{
 			dataType="Object";
 			class PositionInfo
@@ -11533,7 +11346,7 @@ class Mission
 				nAttributes=24;
 			};
 		};
-		class Item91
+		class Item89
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12016,7 +11829,7 @@ class Mission
 				nAttributes=24;
 			};
 		};
-		class Item92
+		class Item90
 		{
 			dataType="Marker";
 			position[]={1529.3707,223.8627,3955.5718};
@@ -12024,7 +11837,7 @@ class Mission
 			type="gm_marker_flag_FI";
 			id=2043;
 		};
-		class Item93
+		class Item91
 		{
 			dataType="Marker";
 			position[]={1449.611,210.12758,4664.8521};
@@ -12032,7 +11845,7 @@ class Mission
 			type="flag_Russia";
 			id=2044;
 		};
-		class Item94
+		class Item92
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12051,7 +11864,7 @@ class Mission
 			type="rhs_Flag_Russia_F";
 			atlOffset=0.49993896;
 		};
-		class Item95
+		class Item93
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12067,7 +11880,7 @@ class Mission
 			id=2046;
 			type="Land_ClutterCutter_small_F";
 		};
-		class Item96
+		class Item94
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12083,7 +11896,7 @@ class Mission
 			id=2047;
 			type="Land_ClutterCutter_small_F";
 		};
-		class Item97
+		class Item95
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12099,7 +11912,7 @@ class Mission
 			type="Land_ClutterCutter_small_F";
 			atlOffset=3.7050018;
 		};
-		class Item98
+		class Item96
 		{
 			dataType="Marker";
 			position[]={4908.0903,2.03,983.82257};
@@ -12109,7 +11922,7 @@ class Mission
 			colorName="ColorWEST";
 			id=2049;
 		};
-		class Item99
+		class Item97
 		{
 			dataType="Marker";
 			position[]={3374.1899,95.731041,1939.8759};
@@ -12119,7 +11932,7 @@ class Mission
 			colorName="ColorWEST";
 			id=2050;
 		};
-		class Item100
+		class Item98
 		{
 			dataType="Marker";
 			position[]={2319.1851,7.914,2784.043};
@@ -12129,6 +11942,134 @@ class Mission
 			colorName="ColorWEST";
 			id=2051;
 			atlOffset=-0.00012969971;
+		};
+		class Item99
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1315.2375,144.25046,5469.6357};
+					};
+					side="East";
+					flags=2;
+					class Attributes
+					{
+						name="uav_pchelaD";
+					};
+					id=2055;
+					type="O_UAV_AI";
+					atlOffset=417.1347;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1315.2423,144.53281,5469.5879};
+					};
+					side="East";
+					class Attributes
+					{
+						name="uav_pchelaG";
+					};
+					id=2056;
+					type="O_UAV_AI";
+					atlOffset=417.1347;
+				};
+				class Item2
+				{
+					dataType="Waypoint";
+					loiterAltitude=900;
+					position[]={1217.84,128.74001,5308.9268};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=2057;
+					type="Loiter";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=2055;
+						item1=2054;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=2056;
+						item1=2054;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=2053;
+			atlOffset=417.1347;
+		};
+		class Item100
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1251.7717,548.55603,5305.584};
+			};
+			side="East";
+			flags=2;
+			class Attributes
+			{
+				init="call{this setcaptive true; [this, ""Eule UAV"", [""50.0"", ""50.0""]] call GRAD_missionControl_fnc_setGroupFrequencies; this disableTIEquipment true;}";
+				name="uav_pchela";
+				reportRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=2054;
+			type="rhs_pchela1t_vvsc";
+			atlOffset=417.1347;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRPchelaNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="AviaRed";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

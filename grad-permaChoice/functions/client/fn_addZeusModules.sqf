@@ -20,6 +20,7 @@ if (
   {
   	// Get all the passed parameters
   	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLtoAGL _position;
 
     missionNameSpace setVariable ["ATAKA_RespawnPosition", _position, true];
   	[] remoteExec ["GRAD_permaChoice_fnc_forceRespawn", [0,-2] select isDedicated, true];
@@ -41,11 +42,11 @@ if (
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     [[
-      "mrk_convoy_1",
-      "mrk_convoy_2",
-      "mrk_convoy_3",
-      "mrk_convoy_4",
-      "mrk_convoy_5"
+      mrk_convoy_1,
+      mrk_convoy_2,
+      mrk_convoy_3,
+      mrk_convoy_4,
+      mrk_convoy_5
     ]] remoteExec ["GRAD_convoy_fnc_start", 2];
 
   }] call zen_custom_modules_fnc_register;
@@ -65,66 +66,6 @@ if (
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
     [true,true,true] remoteExec ["GRAD_missionControl_fnc_endMission", [0,-2] select isDedicated];
-
-  }] call zen_custom_modules_fnc_register;
-
-
-
-
-  ["ATAKA", "Create Attack Task",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	[slot_boss,["tsk_attack"],["Blauen Sektor sichern, AA zerstören","Sektor sichern",""],"",1,2,true, "attack",true] call BIS_fnc_taskCreate;
-
-  }] call zen_custom_modules_fnc_register;
-
-  ["ATAKA", "Attack Task Success",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	["tsk_attack", "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
-
-  }] call zen_custom_modules_fnc_register;
-
-  ["ATAKA", "Attack Task Fail",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	["tsk_attack", "FAILED",true] spawn BIS_fnc_taskSetState;
-
-  }] call zen_custom_modules_fnc_register;
-
-
-
-
-  ["ATAKA", "Create Defend Task",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	[slot_boss,["tsk_defend"],["Gegenangriff abwehren.","Verteidigen",""],"",1,2,true, "defend", true] call BIS_fnc_taskCreate;
-
-  }] call zen_custom_modules_fnc_register;
-
-  ["ATAKA", "Defend Task Success",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	["tsk_defend", "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
-
-  }] call zen_custom_modules_fnc_register;
-
-  ["ATAKA", "Defend Task Fail",
-  {
-  	// Get all the passed parameters
-  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-  	["tsk_defend", "FAILED",true] spawn BIS_fnc_taskSetState;
 
   }] call zen_custom_modules_fnc_register;
 

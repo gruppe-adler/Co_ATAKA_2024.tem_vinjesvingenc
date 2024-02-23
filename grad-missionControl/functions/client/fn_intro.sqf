@@ -2,11 +2,7 @@
 STHud_UIMode = 0;
 diwako_dui_main_toggled_off = true;
 
-/*
-startFog=0.041335065;
-startFogDecay=0.1;
-startFogBase=30.393677;
-*/
+
 
 // camera stuff is async
 [] spawn {

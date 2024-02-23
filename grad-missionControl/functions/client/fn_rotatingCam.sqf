@@ -11,7 +11,7 @@ _this spawn {
 
     [
         [
-            ["Debriefing","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#59ffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/><br/>",25]
+            ["Debriefing","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#ffffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/><br/>",25]
         ]
     ] spawn GRAD_missionControl_fnc_typeText;
     

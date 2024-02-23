@@ -7,10 +7,10 @@ if (count _waypointMarker isEqualTo 0) exitWith {
 	diag_log format ["no waypoints found"];
 };
 
-private _startPos = getMarkerPos (_waypointMarker select 0);
+private _startPos = getPos (_waypointMarker select 0);
 
 {
-	_waypoints append [getMarkerPos _x];
+	_waypoints append [getPos _x];
 } forEach _waypointMarker;
 
 private _distanceBetweenVehicles = 50;

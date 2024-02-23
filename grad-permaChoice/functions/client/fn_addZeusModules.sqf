@@ -1,13 +1,9 @@
 waitUntil {!isNull player};
 waitUntil {  time > 3 };
 if (
-  !isNull (getAssignedCuratorLogic player) &&
-  {isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")}
+  !isNull (getAssignedCuratorLogic player)
 ) then
 {
-  // Note that the line below has to be uncommented if your mission is a Zeus Game Master mission.
-  // TODO check if below is necessary to uncomment
-  waitUntil {not isNil "ares_category_list"};
 
   ["ATAKA", "Show List of DIE & SPECTATE Players",
   {
@@ -18,7 +14,7 @@ if (
     private _stringify = str _spectatorList;
   	["AllSpectators", [_stringify]] call bis_fnc_showNotification;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Force Respawn everyone here",
   {
@@ -28,7 +24,7 @@ if (
     missionNameSpace setVariable ["ATAKA_RespawnPosition", _position, true];
   	[] remoteExec ["GRAD_permaChoice_fnc_forceRespawn", [0,-2] select isDedicated, true];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Spawn Reinforcements",
   {
@@ -37,7 +33,7 @@ if (
 
   	[""] remoteExec ["GRAD_reinforcements_fnc_init", 2];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Spawn Convoy",
   {
@@ -52,7 +48,7 @@ if (
       "mrk_convoy_5"
     ]] remoteExec ["GRAD_convoy_fnc_start", 2];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Display Mission End SUCCESS",
   {
@@ -61,7 +57,7 @@ if (
 
     [true,true,true] remoteExec ["GRAD_missionControl_fnc_endMission", [0,-2] select isDedicated];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
    ["ATAKA", "Display Mission End FAIL",
   {
@@ -70,7 +66,7 @@ if (
 
     [true,true,true] remoteExec ["GRAD_missionControl_fnc_endMission", [0,-2] select isDedicated];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
 
 
@@ -82,7 +78,7 @@ if (
 
   	[slot_boss,["tsk_attack"],["Blauen Sektor sichern, AA zerstören","Sektor sichern",""],"",1,2,true, "attack",true] call BIS_fnc_taskCreate;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Attack Task Success",
   {
@@ -91,7 +87,7 @@ if (
 
   	["tsk_attack", "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Attack Task Fail",
   {
@@ -100,7 +96,7 @@ if (
 
   	["tsk_attack", "FAILED",true] spawn BIS_fnc_taskSetState;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
 
 
@@ -112,7 +108,7 @@ if (
 
   	[slot_boss,["tsk_defend"],["Gegenangriff abwehren.","Verteidigen",""],"",1,2,true, "defend", true] call BIS_fnc_taskCreate;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Defend Task Success",
   {
@@ -121,7 +117,7 @@ if (
 
   	["tsk_defend", "SUCCEEDED",true] spawn BIS_fnc_taskSetState;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Defend Task Fail",
   {
@@ -130,7 +126,7 @@ if (
 
   	["tsk_defend", "FAILED",true] spawn BIS_fnc_taskSetState;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
 
 
@@ -141,5 +137,5 @@ if (
 
     [slot_boss,["tsk_join"],["Nachbesprechung abhalten.","Nachbesprechung",""],_position,1,2,true, "joinHere",true] call BIS_fnc_taskCreate;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 };

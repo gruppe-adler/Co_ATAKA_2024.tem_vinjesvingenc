@@ -1,13 +1,9 @@
 waitUntil {!isNull player};
 waitUntil {  time > 3 };
 if (
-  !isNull (getAssignedCuratorLogic player) &&
-  {isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")}
+  !isNull (getAssignedCuratorLogic player)
 ) then
 {
-  // Note that the line below has to be uncommented if your mission is a Zeus Game Master mission.
-  // TODO check if below is necessary to uncomment
-  waitUntil {not isNil "ares_category_list"};
 
   ["ZEUS HELPERS", "Force Movement",
   {
@@ -20,7 +16,7 @@ if (
 
     [_objectUnderCursor, _waypointPos] call GRAD_zeusHelpers_fnc_forceMovement;
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ZEUS HELPERS", "Activate Civilian Modules",
   {
@@ -30,7 +26,7 @@ if (
     civmodule_1 setVariable ["#active",true,true];
     civmodule_2 setVariable ["#active",true,true];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ZEUS HELPERS", "Deactivate Civilian Modules",
   {
@@ -40,7 +36,7 @@ if (
     civmodule_1 setVariable ["#active",false,true];
     civmodule_2 setVariable ["#active",false,true];
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ZEUS HELPERS", "Stuhlkreis bauen",
   {
@@ -89,7 +85,7 @@ if (
     };
 
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
 
   ["ZEUS HELPERS", "Outro",
@@ -110,7 +106,7 @@ if (
           
     } forEach (switchableUnits + playableUnits);
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
   ["ZEUS HELPERS", "Terminate Ambient Anim",
   {
@@ -122,6 +118,6 @@ if (
     };
 
 
-  }] call Ares_fnc_RegisterCustomModule;
+  }] call zen_custom_modules_fnc_register;
 
 };

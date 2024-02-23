@@ -10,3 +10,4 @@
 #include "..\grad-reinforcements\cfgFunctions.hpp"
 #include "..\grad-zeusHelpers\cfgFunctions.hpp"
 #include "..\node_modules\grad-customGear\cfgFunctions.hpp"
+#include "functions\grasscutter\cfgFunctions.hpp"

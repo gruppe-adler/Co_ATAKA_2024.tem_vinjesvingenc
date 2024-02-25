@@ -32,14 +32,13 @@
 
 params [
 	["_mode","",[""]],
-	["_this",[],[[]]]
+	["_object",objNull]
 ];
 
 private _leafletClass = "West";
 
 switch _mode do {
 	case "fired": {
-		params ["_position","_height"];
 
 		////--- Leaflets for effect
 		//_leafletsEffect = "#particlesource" createVehicleLocal position _obj;
@@ -49,7 +48,7 @@ switch _mode do {
 		// open door
 		// _obj animateSource ["leaflet_door",1];
 		
-		_position set [2, _height];
+		private _position = getPos _object;
 
 		_time = time + 0.1;
 		waituntil {time > _time};
@@ -72,8 +71,8 @@ switch _mode do {
 			_leaflets = "#particlesource" createVehicleLocal _position;
 			_leaflets setParticleParams (_leafletsParams select 0);
 			_leaflets setParticleRandom (_leafletsParams select 1);
-			_leaflets setDropInterval (_leafletsParams select 2);
-			_leaflets attachto [_position,[0,0,0],"leaflet_spawn"];
+			_leaflets setDropInterval 0.001;  // (_leafletsParams select 2);
+			_leaflets attachto [_object,[0,0,0],"",true];
 		};
 
 		_time = time + 1;

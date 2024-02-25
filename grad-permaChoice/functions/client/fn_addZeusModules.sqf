@@ -51,6 +51,16 @@ if (
 
   }] call zen_custom_modules_fnc_register;
 
+ ["ATAKA", "Add Leaflet Action",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+    if (!isNull _objectUnderCursor) then {
+      [_objectUnderCursor] call GRAD_civPartisans_fnc_addLeafletAction;
+    };
+
+  }] call zen_custom_modules_fnc_register;
 
   ["ATAKA", "Show List of DIE & SPECTATE Players",
   {

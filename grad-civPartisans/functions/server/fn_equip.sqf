@@ -95,7 +95,7 @@ if (_armed) then {
 		_headgear,"G_Bandanna_oli",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]
 	];
 
-	if (random 2 > 0.7) then {
+	if (random 2 > 1.8) then {
 		_unit addWeapon "rhs_weap_M136";
 		_unit addMagazines ["rhs_m136_mag", 1];
 	};

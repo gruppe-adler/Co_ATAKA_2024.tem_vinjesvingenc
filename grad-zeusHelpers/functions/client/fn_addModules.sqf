@@ -18,6 +18,7 @@ if (
 
   }] call zen_custom_modules_fnc_register;
 
+/*
   ["ZEUS HELPERS", "Activate Civilian Modules",
   {
     // Get all the passed parameters
@@ -37,7 +38,7 @@ if (
     civmodule_2 setVariable ["#active",false,true];
 
   }] call zen_custom_modules_fnc_register;
-
+*/
 
 
   ["ZEUS HELPERS", "Outro",

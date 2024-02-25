@@ -19,5 +19,7 @@ _frequency params ["_frequencySW", "_frequencySWAdditional", "_frequencyLR"];
 
 } forEach units group _unit;
 
-private _data = [nil, _callsign, false];
-["RegisterGroup", [group _unit, _unit, _data]] call BIS_fnc_dynamicGroups;
+if (_callsign != "") then {
+	private _data = [nil, _callsign, false];
+	["RegisterGroup", [group _unit, _unit, _data]] call BIS_fnc_dynamicGroups;
+};

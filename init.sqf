@@ -47,12 +47,8 @@ private _anim = player getVariable ["GRAD_setup_anim", "ACE_AmovPercMstpScapWnon
 player setPos _pos; 
 player setDir _dir;
 
-/* 
-
 player switchmove "amovpercmstpslowwrfldnon";
 
 [player, _anim] remoteExec ["switchMove", 0, true];
 
 [] spawn GRAD_missionControl_fnc_intro;
-
-*/

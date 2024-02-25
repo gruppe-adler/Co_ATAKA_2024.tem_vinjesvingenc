@@ -5,6 +5,53 @@ if (
 ) then
 {
 
+  ["ATAKA", "Spawn single partisan",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLToAGL _position;
+
+    private _unit = (createGroup west) createUnit ["rhsusf_usmc_recon_marpat_wd_rifleman", _position, [], 0, "NONE"];
+    [_unit, true] call grad_civPartisans_fnc_equip;
+   
+
+  }] call zen_custom_modules_fnc_register;
+
+  ["ATAKA", "Spawn partisan garrison",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLToAGL _position;
+
+    private _group = (createGroup west);
+
+    for "_i" from 1 to (ceil(random 9)) do {
+       private _unit = _group createUnit ["rhsusf_usmc_recon_marpat_wd_rifleman", _position, [], 0, "NONE"];
+       [_unit, true] call grad_civPartisans_fnc_equip;
+    };
+
+    [_group, _group, 100, [], true, true, 2] call lambs_wp_fnc_taskGarrison;
+
+  }] call zen_custom_modules_fnc_register;
+
+  ["ATAKA", "Spawn partisan patrol",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLToAGL _position;
+
+    private _group = (createGroup west);
+
+    for "_i" from 1 to (ceil(random 9)) do {
+        private _unit = _group createUnit ["rhsusf_usmc_recon_marpat_wd_rifleman", _position, [], 0, "NONE"];
+      [_unit, true] call grad_civPartisans_fnc_equip;
+    };
+
+    [_group, _group, 200, 10, [], true] call lambs_wp_fnc_taskPatrol;
+
+  }] call zen_custom_modules_fnc_register;
+
+
   ["ATAKA", "Show List of DIE & SPECTATE Players",
   {
   	// Get all the passed parameters

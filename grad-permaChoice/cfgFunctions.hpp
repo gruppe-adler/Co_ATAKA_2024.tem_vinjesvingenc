@@ -11,6 +11,7 @@ class grad_permaChoice {
       class onPlayerUnconscious;
       class setPlayerSpectator;
       class showNotification;
+      class handleDamage;
   };
 
 	class server {

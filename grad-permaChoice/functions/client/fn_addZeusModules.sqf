@@ -51,6 +51,30 @@ if (
 
   }] call zen_custom_modules_fnc_register;
 
+
+  ["ATAKA", "ENABLE bmp damage",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLToAGL _position;
+
+    GRAD_BMP_YOLO = false; publicVariable "GRAD_BMP_YOLO";
+    systemChat str GRAD_BMP_YOLO;
+
+  }] call zen_custom_modules_fnc_register;
+
+
+  ["ATAKA", "DISABLE bmp damage",
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+    _position = ASLToAGL _position;
+
+    GRAD_BMP_YOLO = true; publicVariable "GRAD_BMP_YOLO";
+    systemChat str GRAD_BMP_YOLO;
+
+  }] call zen_custom_modules_fnc_register;
+
  ["ATAKA", "Add Leaflet Action",
   {
   	// Get all the passed parameters
